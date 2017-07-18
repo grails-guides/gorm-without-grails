@@ -1,0 +1,50 @@
+Lets start by creating our domain model for the application.
+
+[source,bash]
+----
+  $ grails create-domain-class vaadin.Driver
+  $ grails create-domain-class vaadin.Make
+  $ grails create-domain-class vaadin.Model
+  $ grails create-domain-class vaadin.User
+  $ grails create-domain-class vaadin.Vehicle
+----
+
+Now let’s edit our domain classes under grails-app/domain/vaadin/.
+We’ll add some properties and the three following annotations.
+
+- @GrailsCompileStatic - increases application performance
+- @EqualsAndHashCode - Auto generates equals and hashCode methods
+- @ToString - Auto generates toString method
+
+[source,groovy]
+./grails-app/domain/vaadin/Make.groovy
+----
+include::{sourceDir}/grails-app/domain/vaadin/Make.groovy[]
+----
+
+[source,groovy]
+./grails-app/domain/vaadin/Model.groovy
+----
+include::{sourceDir}/grails-app/domain/vaadin/Model.groovy[]
+----
+
+[source,groovy]
+./grails-app/domain/vaadin/Vehicle.groovy
+----
+include::{sourceDir}/grails-app/domain/vaadin/Vehicle.groovy[]
+----
+
+There is a bit more to our Driver.groovy than meets the eye versus the first 3 classes. That's
+because we are actually extending our User.groovy class with driver. This will grant us
+some extra flexibility in the future as we grow our application.
+[source,groovy]
+./grails-app/domain/vaadin/Driver.groovy
+----
+include::{sourceDir}/grails-app/domain/vaadin/Driver.groovy[]
+----
+
+[source,groovy]
+./grails-app/domain/vaadin/User.groovy
+----
+include::{sourceDir}/grails-app/domain/vaadin/User.groovy[]
+----

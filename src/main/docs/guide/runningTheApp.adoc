@@ -1,0 +1,37 @@
+//include::{commondir}/common-runapp.adoc[]
+
+At this point a test run is suggested just to make sure everything is functioning properly.
+
+To run the application first
+
+[source,bash]
+----
+$ cd initial/
+----
+
+To launch the application, run the following command.
+
+[source,bash]
+----
+$ ./gradlew bootRun
+----
+
+If everything is good to go this will start up the Grails application,
+which will be running on `http://localhost:8080`
+
+image::grailsDefault.png[]
+
+To see Vaadin in action navigate to `http://localhost:8080/vaadinui` instead.
+
+image::vaadinDefault.png[]
+
+If you chose to create your own app and are getting build errors please remember our earlier warning
+about the package name.
+
+When the package name is incorrect
+
+image::buildFail.png[]
+
+When the package name is correct
+
+image::buildPass.png[]

@@ -1,0 +1,41 @@
+Next lets create our service layer for our application so Grails and Vaadin can share
+resources.
+
+[source,bash]
+----
+  $ grails create-service vaadin.DriverService
+  $ grails create-service vaadin.MakeService
+  $ grails create-service vaadin.ModelService
+  $ grails create-service vaadin.VehicleService
+----
+
+Now let’s edit our service classes under grails-app/services/vaadin/.
+We’ll add a `listAll()` method to all of the classes. This method will have the following additional annotation.
+
+- @Transactional(readOnly = true) - good practice to have on methods that only return data
+
+[source,groovy]
+./grails-app/services/vaadin/DriverService.groovy
+----
+include::{sourceDir}/grails-app/services/vaadin/DriverService.groovy[]
+----
+
+[source,groovy]
+./grails-app/services/vaadin/MakeService.groovy
+----
+include::{sourceDir}/grails-app/services/vaadin/MakeService.groovy[]
+----
+
+[source,groovy]
+./grails-app/services/vaadin/ModelService.groovy
+----
+include::{sourceDir}/grails-app/services/vaadin/ModelService.groovy[]
+----
+
+Our VehicleService.groovy has an additional `save()` method so that we can add new data to our application.
+
+[source,groovy]
+./grails-app/services/vaadin/VehicleService.groovy
+----
+include::{sourceDir}/grails-app/services/vaadin/VehicleService.groovy[]
+----

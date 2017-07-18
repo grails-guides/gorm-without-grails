@@ -1,0 +1,14 @@
+First, lets start off with a bit about what Vaadin is. Vaadin is a Frontend Framework designed
+to be a full replacement UI. It gives you the ability to develop your UI server-side in Java
+(or in our case Grails) as well as still allowing more traditional front end development. For
+our application we will be using the server-side developed components which give use the biggest
+performance gains. Vaadin is also fully complimentary to the Grails framework. Vaadin does
+not need to use Grails controllers and can connect directly to our service layer. This
+leaves our controllers still fully functional with all the Grails goodness you have come to expect
+for things such as REST API calls.
+
+If you require additional information on Vaadin please check out the official documentation
+https://vaadin.com/docs/-/part/framework/introduction/intro-overview.html[here]. Additionally
+you may find a fair number of examples in an older version of Vaadin and
+https://vaadin.com/framework/whatsnew[this] page gives a good explanation of how some of these
+features have been updated in Vaadin 8.

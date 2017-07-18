@@ -1,0 +1,74 @@
+Now to add the view which is the bulk of our Vaadin code. Create a new file located in
+`grails-app/vaadin/vaadin` called `GarageView.groovy`.
+
+Next make the necessary updates.
+
+[source,groovy]
+./grails-app/vaadin/vaadin/GarageView.groovy
+----
+include::{sourceDir}/grails-app/vaadin/vaadin/GarageView.groovy[]
+----
+
+<1> Add `@SpringView` annotation and set the name so that your view can be found.
+<2> The view should extend the layout style that is desired
+<3> Set the actual view name
+<4> Tells the view `init()` to execute after the main UI `init()`
+
+WARNING: Grails auto dependency injection is not able to detect services in Vaadin,
+thus we require using the more traditional Spring annotation @Autowired in order
+to get dependency injection to work properly.
+
+Our view is trying to mimic the layout of much of modern web design by making use of "Rows"
+in our case we have 3 rows, a header, data collection, and data display (grid). As we develop
+a pattern start to emerge in Vaadin for views.
+
+- Create layout
+- Create UI component
+- Add UI component to layout
+- Add layout to view
+
+When adding layout to the view you can just use `addComponent()` as it is aware that it is
+adding to itself, unlike the top level UI where `root.addComponent()` is required.
+
+To keep a clean file continue building each UI component as its own private method. An
+important note if you are familiar with groovy is we are able to return like the following...
+
+[source,groovy]
+----
+Label someMethod() {
+    new Label("Im a label")  // return
+}
+----
+
+But in your Vaadin files this will fail claiming that you are returning an un-initialized variable.
+Its easy enough to work around but requires some minor extra coding. ie.
+
+[source,groovy]
+./grails-app/vaadin/vaadin/GarageView.groovy
+----
+include::{sourceDir}/grails-app/vaadin/vaadin/GarageView.groovy[indent=0, lines="81..86"]
+----
+
+Once we have built our UI components now we need to be able to interact with them. To do this
+we add listeners to our components making use of groovy closures to specify what would happen
+when an event occurs. In our case we are `updateVehicle()` which we then `submit()`
+
+[source,groovy]
+./grails-app/vaadin/vaadin/GarageView.groovy
+----
+include::{sourceDir}/grails-app/vaadin/vaadin/GarageView.groovy[indent=0, lines="54..59"]
+----
+
+Using the listeners we build the vehicle object which is then submitted when the button is clicked.
+The last line of our submit method reloads our view to refresh the newly updated data.
+
+[source,groovy]
+./grails-app/vaadin/vaadin/GarageView.groovy
+----
+include::{sourceDir}/grails-app/vaadin/vaadin/GarageView.groovy[indent=0, lines="159..162"]
+----
+
+Now that everything is in place return to <<runningTheApp>> to run your app. If everything is as
+it should be you will see the following.
+
+image::runningGarageApp.png[]
