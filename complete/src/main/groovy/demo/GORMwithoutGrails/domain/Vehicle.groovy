@@ -1,6 +1,6 @@
 package demo.GORMwithoutGrails.domain
 
-import grails.persistence.Entity
+import grails.gorm.annotation.Entity
 
 @Entity
 class Vehicle {
