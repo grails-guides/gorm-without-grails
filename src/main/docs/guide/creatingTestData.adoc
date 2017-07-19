@@ -1,7 +1,18 @@
-Now that our domain is in place, lets preload some data to work with.
+Now that all our app config is complete and we should be able to view our tables at
+http://localhost:8080/console lets go ahead and bootstrap some data. Since we don't have a
+built in bootstraping construct like we do in Grails we make use of a hibernate feature that
+allows us to auto import a sql file.
 
-[source,groovy]
-./grails-app/init/vaadin/Bootstrap.groovy
+First lets create a new file `import.sql` in `src/main/resources`. Once you have created
+the sql file go ahead and edit it and add the following.
+
+[source,sql]
+./src/main/resources/import.sql
 ----
-include::{sourceDir}/grails-app/init/vaadin/Bootstrap.groovy[]
+include::{sourceDir}/src/main/resources/import.sql[]
 ----
+
+Now as mentioned in the last section make sure that in
+your `application.properties` file you have `spring.jpa.properties.hibernate.hbm2ddl.auto=create-drop`.
+Without that line hibernate will not pickup on your `import.sql` and will not bootstrap
+your data.

@@ -6,8 +6,10 @@ import org.grails.datastore.gorm.GormEntity
 @Entity
 class Make implements GormEntity<Make> {
 
+    /** Properties */
     String name
 
+    /** Required in order to bootstrap data */
     static mapping = {
         version false
     }

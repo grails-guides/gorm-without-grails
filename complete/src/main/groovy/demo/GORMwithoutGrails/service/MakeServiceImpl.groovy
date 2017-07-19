@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional
 @Transactional
 class MakeServiceImpl implements MakeService {
 
+    @Transactional(readOnly = true)
     @Override
     List<Make> list() {
         Make.list()

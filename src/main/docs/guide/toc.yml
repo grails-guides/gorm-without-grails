@@ -6,12 +6,15 @@ runningTheApp:
   title: Running the Application
 configuringTheApp:
   title: Configuring your Build
-#writingTheApp:
-#  title: Writing the Application
-#  creatingTheDomain: Creating the domain
-#  creatingTestData: Bootstrap Data
-#  creatingTheServices: Creating the service layer
-#  creatingTheControllers: Creating a controller
+writingTheAppPartOne:
+  title: Writing the Application Part 1
+  creatingTheDomain: Creating the domain
+  testingTheDomain: Testing our domain
+writingTheAppPartTwo:
+  title: Writing the Application Part 2
+  creatingTestData: Bootstrap Data
+  creatingTheServices: Creating the service layer
+  creatingTheControllers: Creating a controller
 #  addingToVaadin: Vaadin
 #  addingView: Adding your view
 #themingTheApp:

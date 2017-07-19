@@ -11,17 +11,8 @@ class MakeController {
 
     @Autowired MakeService makeService
 
-//    PostController(MakeService makeService) {
-//        this.makeService = makeService
-//    }
-
     @RequestMapping("/")
-    String list(){
+    String index(){
         makeService.list()
     }
-
-//    @RequestMapping("/{id}")
-//    public String get(@PathVariable(value = "id") int id){
-//        makeService.get(id)
-//    }
 }

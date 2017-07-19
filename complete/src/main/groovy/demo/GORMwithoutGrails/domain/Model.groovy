@@ -6,8 +6,10 @@ import org.grails.datastore.gorm.GormEntity
 @Entity
 class Model implements GormEntity<Model> {
 
+    /** Properties */
     String name
 
+    /** Required in order to bootstrap data */
     static mapping = {
         version false
     }

@@ -1,50 +1,80 @@
-Lets start by creating our domain model for the application.
+Now with our packages in place lets go ahead and create our domain objects.
+
+ - Driver.groovy
+ - Make.groovy
+ - Model.groovy
+ - User.groovy
+ - Vehicle.groovy
+
+NOTE: Our domain is based off of work in previous guides.
+
+Feel free to use your favorite IDE to create these or execute the following
 
 [source,bash]
 ----
-  $ grails create-domain-class vaadin.Driver
-  $ grails create-domain-class vaadin.Make
-  $ grails create-domain-class vaadin.Model
-  $ grails create-domain-class vaadin.User
-  $ grails create-domain-class vaadin.Vehicle
+$ cd complete/src/main/groovy/demo/GORMwithoutGrails/domain/
+$ touch Driver.groovy
+$ touch Make.groovy
+$ touch Model.groovy
+$ touch User.groovy
+$ touch Vehicle.groovy
 ----
 
-Now let’s edit our domain classes under grails-app/domain/vaadin/.
-We’ll add some properties and the three following annotations.
+Next lets do the same thing to setup our testing files.
 
-- @GrailsCompileStatic - increases application performance
-- @EqualsAndHashCode - Auto generates equals and hashCode methods
-- @ToString - Auto generates toString method
-
-[source,groovy]
-./grails-app/domain/vaadin/Make.groovy
+[source,bash]
 ----
-include::{sourceDir}/grails-app/domain/vaadin/Make.groovy[]
+$ cd complete/src/test/groovy/demo/GORMwithoutGrails/domain/
+$ touch DriverSpec.groovy
+$ touch MakeSpec.groovy
+$ touch ModelSpec.groovy
+$ touch VehicleSpec.groovy
 ----
 
-[source,groovy]
-./grails-app/domain/vaadin/Model.groovy
-----
-include::{sourceDir}/grails-app/domain/vaadin/Model.groovy[]
-----
+Now that all our class stubs are in place lets go ahead and edit them.
 
 [source,groovy]
-./grails-app/domain/vaadin/Vehicle.groovy
+./src/main/groovy/demo/GORMwithoutGrails/domain/Make.groovy
 ----
-include::{sourceDir}/grails-app/domain/vaadin/Vehicle.groovy[]
+include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/domain/Make.groovy[]
 ----
 
-There is a bit more to our Driver.groovy than meets the eye versus the first 3 classes. That's
-because we are actually extending our User.groovy class with driver. This will grant us
+[source,groovy]
+./src/main/groovy/demo/GORMwithoutGrails/domain/Model.groovy
+----
+include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/domain/Model.groovy[]
+----
+
+[source,groovy]
+./src/main/groovy/demo/GORMwithoutGrails/domain/Vehicle.groovy
+----
+include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/domain/Vehicle.groovy[]
+----
+
+There is a bit more to our `Driver.groovy` than meets the eye versus the first 3 classes. That's
+because we are actually extending our `User.groovy class with driver. This will grant us
 some extra flexibility in the future as we grow our application.
+
 [source,groovy]
-./grails-app/domain/vaadin/Driver.groovy
+./src/main/groovy/demo/GORMwithoutGrails/domain/Driver.groovy
 ----
-include::{sourceDir}/grails-app/domain/vaadin/Driver.groovy[]
+include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/domain/Driver.groovy[]
 ----
 
 [source,groovy]
-./grails-app/domain/vaadin/User.groovy
+./src/main/groovy/demo/GORMwithoutGrails/domain/User.groovy
 ----
-include::{sourceDir}/grails-app/domain/vaadin/User.groovy[]
+include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/domain/User.groovy[]
 ----
+
+Unlike standard GORM we annotate our domain classes with the `@Entity` annotation so that
+when our application runs Spring Boot will pick up on our domain. Additionally we add the
+`implements GormEntity<>` to our domain. This is not required but helps IDE's pick up the
+domain correctly. Finally we add
+[source,groovy]
+----
+static mapping = {
+    version false
+}
+----
+TIP: Turning off the auto version is so we can bootstrap simple data without complications.

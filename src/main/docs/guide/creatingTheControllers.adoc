@@ -1,41 +1,46 @@
-While completely unnecessary for Vaadin we want to demonstrate that there is no conflict
-between Grails controllers and the Vaadin Framework.
+Finally lets create some controllers so we can have basic UI access to our data.
 
 [source,bash]
 ----
-  $ grails create-controller vaadin.GarageController
+  $ cd src/main/groovy/demo/GORMwithoutGrails/controller
+  $ touch MakeController
+  $ touch ModelController
+  $ touch VehicleController
 ----
 
-Now let’s edit our controller under grails-app/controllers/vaadin/.
-We will import one of our services, update our index method, and add the following annotation.
+Now let’s edit our controllers under src/main/groovy/demo/GORMwithoutGrails/controller.
+We will import one of our services and update our index method. Our controllers will have
+the following annotations
 
-- @GrailsCompileStatic - increases application performance
-
+ - @RestController - Denotes the controller as restful and that it can return data via url
+ - @RequestMapping("/someUrl") - Sets the base url mapping for the entire controller
+ - @Autowired - Allows use to use dependency injection to access our services
+ - @RequestMapping("/") [on the method] - Sets the url mapping for the method, beyond the base url
 
 [source,groovy]
-./grails-app/controllers/vaadin/GarageController.groovy
+./src/main/groovy/demo/GORMwithoutGrails/controller/MakeController.groovy
 ----
-include::{sourceDir}/grails-app/controllers/vaadin/GarageController.groovy[]
-----
-
-<1> Declaring our service
-<2> `index()` calls our service and renders the output as JSON
-
-At this point lets make sure everything is working properly and run <<runningTheApp>>
-the application.
-
-Now we can exercise the API using cURL or another API tool.
-
-Make a GET request to /garage to get a list of Vehicles:
-
-[source,bash]
-----
-  $ curl -X "GET" "http://localhost:8080/garage"
-
-    [{"id":1,"driver":{"id":1},"make":{"id":1},"model":{"id":1},"name":"Pickup"},
-     {"id":2,"driver":{"id":1},"make":{"id":1},"model":{"id":2},"name":"Economy"},
-     {"id":3,"driver":{"id":2},"make":{"id":2},"model":{"id":3},"name":"Minivan"}]
+include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/controller/MakeController.groovy[]
 ----
 
-If data comes back everything is setup and connected properly at this point and we have
-verified that we have some test data. Now lets look at how to attach Vaadin to Grails
+[source,groovy]
+./src/main/groovy/demo/GORMwithoutGrails/controller/ModelController.groovy
+----
+include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/controller/ModelController.groovy[]
+----
+
+[source,groovy]
+./src/main/groovy/demo/GORMwithoutGrails/controller/VehicleController.groovy
+----
+include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/controller/VehicleController.groovy[]
+----
+
+Now that we have controllers with url mappings we have everything we need to test our
+application live. Go back to <<runningTheApp>> and run the application. We can now access
+the application via the browser and see our bootstrapped data returned
+
+ - http://localhost:8080/makes/
+ - http://localhost:8080/models/
+ - http://localhost:8080/vehicles/ - no data bootstrapped for this one
+
+image::urlData1.png[]

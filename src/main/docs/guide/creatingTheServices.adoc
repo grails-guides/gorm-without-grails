@@ -1,41 +1,57 @@
-Next lets create our service layer for our application so Grails and Vaadin can share
-resources.
+Next lets create our service layer for our application.
 
 [source,bash]
 ----
-  $ grails create-service vaadin.DriverService
-  $ grails create-service vaadin.MakeService
-  $ grails create-service vaadin.ModelService
-  $ grails create-service vaadin.VehicleService
+  $ cd src/main/groovy/demo/GORMwithoutGrails/service
+  $ touch MakeService
+  $ touch MakeServiceImpl
+  $ touch ModelService
+  $ touch ModelServiceImpl
+  $ touch VehicleService
+  $ touch VehicleServiceImpl
 ----
 
-Now let’s edit our service classes under grails-app/services/vaadin/.
-We’ll add a `listAll()` method to all of the classes. This method will have the following additional annotation.
+Now let’s edit our service classes under src/main/groovy/demo/GORMwithoutGrails/service.
+We’ll add a `list()` method to all of the classes. This method will have the following additional annotation.
 
 - @Transactional(readOnly = true) - good practice to have on methods that only return data
 
 [source,groovy]
-./grails-app/services/vaadin/DriverService.groovy
+./src/main/groovy/demo/GORMwithoutGrails/service/MakeService.groovy
 ----
-include::{sourceDir}/grails-app/services/vaadin/DriverService.groovy[]
-----
-
-[source,groovy]
-./grails-app/services/vaadin/MakeService.groovy
-----
-include::{sourceDir}/grails-app/services/vaadin/MakeService.groovy[]
+include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/service/MakeService.groovy[]
 ----
 
 [source,groovy]
-./grails-app/services/vaadin/ModelService.groovy
+./src/main/groovy/demo/GORMwithoutGrails/service/MakeServiceImpl.groovy
 ----
-include::{sourceDir}/grails-app/services/vaadin/ModelService.groovy[]
+include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/service/MakeServiceImpl.groovy[]
 ----
-
-Our VehicleService.groovy has an additional `save()` method so that we can add new data to our application.
 
 [source,groovy]
-./grails-app/services/vaadin/VehicleService.groovy
+./src/main/groovy/demo/GORMwithoutGrails/service/ModelService.groovy
 ----
-include::{sourceDir}/grails-app/services/vaadin/VehicleService.groovy[]
+include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/service/ModelService.groovy[]
 ----
+
+[source,groovy]
+./src/main/groovy/demo/GORMwithoutGrails/service/ModelServiceImpl.groovy
+----
+include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/service/ModelServiceImpl.groovy[]
+----
+
+[source,groovy]
+./src/main/groovy/demo/GORMwithoutGrails/service/VehicleService.groovy
+----
+include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/service/VehicleService.groovy[]
+----
+
+[source,groovy]
+./src/main/groovy/demo/GORMwithoutGrails/service/VehicleServiceImpl.groovy
+----
+include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/service/VehicleServiceImpl.groovy[]
+----
+
+Additionally all our service classes make use of the `@Service('someName')` annotation.
+This annotation tells Spring what our services are called so it can properly map our
+dependency injection.

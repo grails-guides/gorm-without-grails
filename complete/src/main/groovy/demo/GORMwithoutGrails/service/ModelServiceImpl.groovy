@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional
 @Transactional
 class ModelServiceImpl implements ModelService {
 
+    @Transactional(readOnly = true)
     @Override
     List<Model> list() {
         Model.list()

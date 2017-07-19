@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional
 @Transactional
 class VehicleServiceImpl implements VehicleService {
 
+    @Transactional(readOnly = true)
     @Override
     List<Vehicle> list() {
         Vehicle.list()
