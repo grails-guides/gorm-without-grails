@@ -6,17 +6,16 @@ import spock.lang.AutoCleanup
 import spock.lang.Shared
 import spock.lang.Specification
 
-class PersonSpec extends Specification {
-
+class MakeSpec extends Specification {
     @Shared @AutoCleanup HibernateDatastore datastore = new HibernateDatastore(getClass().getPackage())
 
     @Rollback
-    def "person can be safed with firstname and lastname"() {
+    def "Make created with name"() {
         when:
-        def p = new Person(firstName: 'Sergio', lastName: 'del Amo')
-        p.save(flush: true)
+        final makeInstance = new Make(name: 'Ford')
+        makeInstance.save(flush: true)
 
         then:
-        Person.count()
+        Make.count()
     }
 }

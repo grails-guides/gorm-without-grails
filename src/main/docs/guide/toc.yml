@@ -2,21 +2,21 @@ gettingStarted:
   title: Getting Started
   requirements: What you will need
   howto: How to complete the guide
-aboutVaadin:
-  title: About Vaadin with Grails
 runningTheApp:
   title: Running the Application
-writingTheApp:
-  title: Writing the Application
-  creatingTheDomain: Creating the domain
-  creatingTestData: Bootstrap Data
-  creatingTheServices: Creating the service layer
-  creatingTheControllers: Creating a controller
-  addingToVaadin: Vaadin
-  addingView: Adding your view
-themingTheApp:
-  title: Theming the Application
-nextSteps:
-  title: Next Steps
+configuringTheApp:
+  title: Configuring your Build
+#writingTheApp:
+#  title: Writing the Application
+#  creatingTheDomain: Creating the domain
+#  creatingTestData: Bootstrap Data
+#  creatingTheServices: Creating the service layer
+#  creatingTheControllers: Creating a controller
+#  addingToVaadin: Vaadin
+#  addingView: Adding your view
+#themingTheApp:
+#  title: Theming the Application
+#nextSteps:
+#  title: Next Steps
 helpWithGrails:
   title: Do you need help with Grails?

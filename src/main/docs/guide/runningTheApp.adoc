@@ -9,6 +9,8 @@ To run the application first
 $ cd initial/
 ----
 
+NOTE: To run the completed app `$ cd complete/` instead of `initial`.
+
 To launch the application, run the following command.
 
 [source,bash]
@@ -16,22 +18,10 @@ To launch the application, run the following command.
 $ ./gradlew bootRun
 ----
 
-If everything is good to go this will start up the Grails application,
-which will be running on `http://localhost:8080`
+At this point we have not configured any views so there is nothing to see in our browser
+yet but so long as your terminal looks similar to the following and you see that tomcat
+was started on 8080 everything should be good.
 
-image::grailsDefault.png[]
+image::initialStartup.png[]
 
-To see Vaadin in action navigate to `http://localhost:8080/vaadinui` instead.
-
-image::vaadinDefault.png[]
-
-If you chose to create your own app and are getting build errors please remember our earlier warning
-about the package name.
-
-When the package name is incorrect
-
-image::buildFail.png[]
-
-When the package name is correct
-
-image::buildPass.png[]
+Now that we have checked the app starts, go ahead and shut it down for now `Ctrl-C`.

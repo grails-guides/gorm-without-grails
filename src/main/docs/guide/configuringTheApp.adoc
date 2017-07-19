@@ -1,0 +1,13 @@
+Since this is Spring Boot and not Grails we have to do a little bit more setup that we
+are used to. In your top level project directory create a `gradle.properties` file.
+
+[source,bash]
+----
+$ touch gradle.properties
+----
+
+After you have created run the above command your new file should be on the same level
+as your `build.gradle` file.
+
+image::gradleProperties.png[]
+

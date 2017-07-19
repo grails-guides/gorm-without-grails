@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement
 class GormWithoutGrailsApplication {
 
     static void main(String[] args) {
+
         SpringApplication.run GormWithoutGrailsApplication, args
     }
 }
