@@ -12,14 +12,11 @@ writingTheAppPartOne:
   testingTheDomain: Testing our domain
 writingTheAppPartTwo:
   title: Writing the Application Part 2
+  creatingAppConfig: Additional App Config
   creatingTestData: Bootstrap Data
   creatingTheServices: Creating the service layer
   creatingTheControllers: Creating a controller
-#  addingToVaadin: Vaadin
-#  addingView: Adding your view
-#themingTheApp:
-#  title: Theming the Application
-#nextSteps:
-#  title: Next Steps
+nextSteps:
+  title: Next Steps
 helpWithGrails:
   title: Do you need help with Grails?

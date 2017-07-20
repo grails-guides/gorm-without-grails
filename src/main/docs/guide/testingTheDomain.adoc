@@ -38,7 +38,7 @@ The test themselves are standard Spock tests where we are creating a base instan
 domain class and saving it. We then check that an object was in fact created.
 
 To execute your new tests and see that everything runs correctly, execute the following
-from the top level project directory.
+from the top level project directory (`cd initial`).
 
 [source,bash]
 ----

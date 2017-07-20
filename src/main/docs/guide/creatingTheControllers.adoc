@@ -9,7 +9,7 @@ Finally lets create some controllers so we can have basic UI access to our data.
 ----
 
 Now let’s edit our controllers under src/main/groovy/demo/GORMwithoutGrails/controller.
-We will import one of our services and update our index method. Our controllers will have
+We will import one of our services and update our index method. The controllers will have
 the following annotations
 
  - @RestController - Denotes the controller as restful and that it can return data via url
@@ -44,3 +44,5 @@ the application via the browser and see our bootstrapped data returned
  - http://localhost:8080/vehicles/ - no data bootstrapped for this one
 
 image::urlData1.png[]
+image::urlData2.png[]
+image::urlData3.png[]

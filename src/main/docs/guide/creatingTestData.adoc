@@ -16,3 +16,6 @@ Now as mentioned in the last section make sure that in
 your `application.properties` file you have `spring.jpa.properties.hibernate.hbm2ddl.auto=create-drop`.
 Without that line hibernate will not pickup on your `import.sql` and will not bootstrap
 your data.
+
+NOTE: Find more information on database initialization
+https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html[here].

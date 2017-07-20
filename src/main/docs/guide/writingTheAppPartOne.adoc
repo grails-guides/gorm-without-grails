@@ -5,7 +5,6 @@ image::baseLayoutWithPackage.png[]
 
 Lets start off by adding a few more packages to keep our application organized. Create the following ...
 
- - config
  - controller
  - domain
  - service

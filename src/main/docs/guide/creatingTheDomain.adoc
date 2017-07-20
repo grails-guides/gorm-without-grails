@@ -6,7 +6,7 @@ Now with our packages in place lets go ahead and create our domain objects.
  - User.groovy
  - Vehicle.groovy
 
-NOTE: Our domain is based off of work in previous guides.
+NOTE: Our domain is based off of work in previous guides mentioned at the start of the guide.
 
 Feel free to use your favorite IDE to create these or execute the following
 
