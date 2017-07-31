@@ -2,7 +2,7 @@ Next lets create our service layer for our application.
 
 [source,bash]
 ----
-  $ cd src/main/groovy/demo/GORMwithoutGrails/service
+  $ cd src/main/groovy/demo/service
   $ touch MakeService
   $ touch MakeServiceImpl
   $ touch ModelService
@@ -11,45 +11,45 @@ Next lets create our service layer for our application.
   $ touch VehicleServiceImpl
 ----
 
-Now let’s edit our service classes under src/main/groovy/demo/GORMwithoutGrails/service.
+Now let’s edit our service classes under src/main/groovy/demo/service.
 We’ll add a `list()` method to all of the classes. This method will have the following additional annotation.
 
 - @Transactional(readOnly = true) - good practice to have on methods that only return data
 
 [source,groovy]
-./src/main/groovy/demo/GORMwithoutGrails/service/MakeService.groovy
+./src/main/groovy/demo/service/MakeService.groovy
 ----
-include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/service/MakeService.groovy[]
-----
-
-[source,groovy]
-./src/main/groovy/demo/GORMwithoutGrails/service/MakeServiceImpl.groovy
-----
-include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/service/MakeServiceImpl.groovy[]
+include::{sourceDir}/src/main/groovy/demo/service/MakeService.groovy[]
 ----
 
 [source,groovy]
-./src/main/groovy/demo/GORMwithoutGrails/service/ModelService.groovy
+./src/main/groovy/demo/service/MakeServiceImpl.groovy
 ----
-include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/service/ModelService.groovy[]
-----
-
-[source,groovy]
-./src/main/groovy/demo/GORMwithoutGrails/service/ModelServiceImpl.groovy
-----
-include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/service/ModelServiceImpl.groovy[]
+include::{sourceDir}/src/main/groovy/demo/service/MakeServiceImpl.groovy[]
 ----
 
 [source,groovy]
-./src/main/groovy/demo/GORMwithoutGrails/service/VehicleService.groovy
+./src/main/groovy/demo/service/ModelService.groovy
 ----
-include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/service/VehicleService.groovy[]
+include::{sourceDir}/src/main/groovy/demo/service/ModelService.groovy[]
 ----
 
 [source,groovy]
-./src/main/groovy/demo/GORMwithoutGrails/service/VehicleServiceImpl.groovy
+./src/main/groovy/demo/service/ModelServiceImpl.groovy
 ----
-include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/service/VehicleServiceImpl.groovy[]
+include::{sourceDir}/src/main/groovy/demo/service/ModelServiceImpl.groovy[]
+----
+
+[source,groovy]
+./src/main/groovy/demo/service/VehicleService.groovy
+----
+include::{sourceDir}/src/main/groovy/demo/service/VehicleService.groovy[]
+----
+
+[source,groovy]
+./src/main/groovy/demo/service/VehicleServiceImpl.groovy
+----
+include::{sourceDir}/src/main/groovy/demo/service/VehicleServiceImpl.groovy[]
 ----
 
 Additionally all our service classes make use of the `@Service('someName')` annotation.

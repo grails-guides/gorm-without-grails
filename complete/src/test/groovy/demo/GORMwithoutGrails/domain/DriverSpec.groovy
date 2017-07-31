@@ -1,14 +1,17 @@
-package demo.GORMwithoutGrails.domain
+package demo.domain
 
-import grails.gorm.transactions.Rollback
+import demo.domain.Driver
 import org.grails.orm.hibernate.HibernateDatastore
+import spock.lang.Specification
+import grails.gorm.transactions.Rollback
 import spock.lang.AutoCleanup
 import spock.lang.Shared
-import spock.lang.Specification
+
 
 class DriverSpec extends Specification {
 
-    @Shared @AutoCleanup HibernateDatastore datastore = new HibernateDatastore(getClass().getPackage())
+    @Shared @AutoCleanup
+    HibernateDatastore datastore = new HibernateDatastore(getClass().getPackage())
 
     @Rollback
     def "Driver created with name"() {

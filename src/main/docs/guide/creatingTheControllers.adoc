@@ -2,13 +2,13 @@ Finally lets create some controllers so we can have basic UI access to our data.
 
 [source,bash]
 ----
-  $ cd src/main/groovy/demo/GORMwithoutGrails/controller
+  $ cd src/main/groovy/demo/controller
   $ touch MakeController
   $ touch ModelController
   $ touch VehicleController
 ----
 
-Now let’s edit our controllers under src/main/groovy/demo/GORMwithoutGrails/controller.
+Now let’s edit our controllers under src/main/groovy/demo/controller.
 We will import one of our services and update our index method. The controllers will have
 the following annotations
 
@@ -18,21 +18,21 @@ the following annotations
  - @RequestMapping("/") [on the method] - Sets the url mapping for the method, beyond the base url
 
 [source,groovy]
-./src/main/groovy/demo/GORMwithoutGrails/controller/MakeController.groovy
+./src/main/groovy/demo/controller/MakeController.groovy
 ----
-include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/controller/MakeController.groovy[]
-----
-
-[source,groovy]
-./src/main/groovy/demo/GORMwithoutGrails/controller/ModelController.groovy
-----
-include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/controller/ModelController.groovy[]
+include::{sourceDir}/src/main/groovy/demo/controller/MakeController.groovy[]
 ----
 
 [source,groovy]
-./src/main/groovy/demo/GORMwithoutGrails/controller/VehicleController.groovy
+./src/main/groovy/demo/controller/ModelController.groovy
 ----
-include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/controller/VehicleController.groovy[]
+include::{sourceDir}/src/main/groovy/demo/controller/ModelController.groovy[]
+----
+
+[source,groovy]
+./src/main/groovy/demo/controller/VehicleController.groovy
+----
+include::{sourceDir}/src/main/groovy/demo/controller/VehicleController.groovy[]
 ----
 
 Now that we have controllers with url mappings we have everything we need to test our

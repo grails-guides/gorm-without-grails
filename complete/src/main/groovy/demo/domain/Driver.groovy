@@ -1,13 +1,14 @@
-package demo.GORMwithoutGrails.domain
+package demo.domain
 
 import grails.gorm.annotation.Entity
-import org.grails.datastore.gorm.GormEntity
 
 @Entity
-class Model implements GormEntity<Model> {
+class Driver extends User {
 
     /** Properties */
     String name
+
+    static hasMany = [ vehicles: Vehicle ]
 
     /** Required in order to bootstrap data */
     static mapping = {
@@ -15,5 +16,6 @@ class Model implements GormEntity<Model> {
     }
 
     static constraints = {
+        vehicles nullable: true
     }
 }

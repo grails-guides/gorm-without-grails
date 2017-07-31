@@ -1,6 +1,7 @@
-package demo.GORMwithoutGrails.service
+package demo.service
 
-import demo.GORMwithoutGrails.domain.Model
+import demo.domain.Model
+import demo.domain.Model
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 

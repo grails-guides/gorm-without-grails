@@ -1,18 +1,18 @@
-package demo.GORMwithoutGrails.controller
+package demo.controller
 
-import demo.GORMwithoutGrails.service.ModelService
+import demo.service.MakeService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/models")
-class ModelController {
+@RequestMapping("/makes")
+class MakeController {
 
-    @Autowired ModelService modelService
+    @Autowired MakeService makeService
 
     @RequestMapping("/")
     String index(){
-        modelService.list()
+        makeService.list()
     }
 }

@@ -3,16 +3,15 @@ include::{commondir}/common-howto.adoc[]
 If you want to start from scratch, create a new Spring Boot application using
 https://start.spring.io/[Spring Initializr].
 
-image::springInitial.png[]
-
-Select a `Gradle Project` using `Groovy` with `Spring Boot 1.5.4`. Once you have selected
+Select a `Gradle Project` using `Groovy` with `Spring Boot 1.5.6`. Once you have selected
 your build and project type, set the Group to your organization ie. `com.example` in our case
 we will use `demo`. Next set the project name (whatever you like) in our case we have selected
-`GORM-without-Grails`
+`gorm-without-grails`
+
+Once that is done add the `Web` and `h2` dependencies to the project.
 
 image::buildAndMetadata.png[]
 
-Once that is done add the `Web` and `h2` dependencies to the project.
 
 image::dependency1.png[]
 image::dependency2.png[]

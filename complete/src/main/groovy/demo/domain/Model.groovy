@@ -1,10 +1,10 @@
-package demo.GORMwithoutGrails.domain
+package demo.domain
 
 import grails.gorm.annotation.Entity
 import org.grails.datastore.gorm.GormEntity
 
 @Entity
-class Make implements GormEntity<Make> {
+class Model implements GormEntity<Model> {
 
     /** Properties */
     String name

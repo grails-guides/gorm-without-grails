@@ -1,4 +1,4 @@
-package demo.GORMwithoutGrails.domain
+package demo.domain
 
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString

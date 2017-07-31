@@ -3,27 +3,27 @@ successfully run a Spring Boot application with GORM. Lets go ahead and edit our
 files we created earlier and make use of those extra Spock dependencies that we included.
 
 [source,groovy]
-./src/test/groovy/demo/GORMwithoutGrails/domain/MakeSpec.groovy
+./src/test/groovy/demo/domain/MakeSpec.groovy
 ----
-include::{sourceDir}/src/test/groovy/demo/GORMwithoutGrails/domain/MakeSpec.groovy[]
-----
-
-[source,groovy]
-./src/test/groovy/demo/GORMwithoutGrails/domain/ModelSpec.groovy
-----
-include::{sourceDir}/src/test/groovy/demo/GORMwithoutGrails/domain/ModelSpec.groovy[]
+include::{sourceDir}/src/test/groovy/demo/domain/MakeSpec.groovy[]
 ----
 
 [source,groovy]
-./src/test/groovy/demo/GORMwithoutGrails/domain/DriverSpec.groovy
+./src/test/groovy/demo/domain/ModelSpec.groovy
 ----
-include::{sourceDir}/src/test/groovy/demo/GORMwithoutGrails/domain/DriverSpec.groovy[]
+include::{sourceDir}/src/test/groovy/demo/domain/ModelSpec.groovy[]
 ----
 
 [source,groovy]
-./src/test/groovy/demo/GORMwithoutGrails/domain/VehicleSpec.groovy
+./src/test/groovy/demo/domain/DriverSpec.groovy
 ----
-include::{sourceDir}/src/test/groovy/demo/GORMwithoutGrails/domain/VehicleSpec.groovy[]
+include::{sourceDir}/src/test/groovy/demo/domain/DriverSpec.groovy[]
+----
+
+[source,groovy]
+./src/test/groovy/demo/domain/VehicleSpec.groovy
+----
+include::{sourceDir}/src/test/groovy/demo/domain/VehicleSpec.groovy[]
 ----
 
 All our tests are virtually identical sans we are testing different objects.

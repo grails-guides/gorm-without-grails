@@ -12,7 +12,7 @@ Feel free to use your favorite IDE to create these or execute the following
 
 [source,bash]
 ----
-$ cd complete/src/main/groovy/demo/GORMwithoutGrails/domain/
+$ cd complete/src/main/groovy/demo/domain/
 $ touch Driver.groovy
 $ touch Make.groovy
 $ touch Model.groovy
@@ -24,7 +24,7 @@ Next lets do the same thing to setup our testing files.
 
 [source,bash]
 ----
-$ cd complete/src/test/groovy/demo/GORMwithoutGrails/domain/
+$ cd complete/src/test/groovy/demo/domain/
 $ touch DriverSpec.groovy
 $ touch MakeSpec.groovy
 $ touch ModelSpec.groovy
@@ -34,21 +34,21 @@ $ touch VehicleSpec.groovy
 Now that all our class stubs are in place lets go ahead and edit them.
 
 [source,groovy]
-./src/main/groovy/demo/GORMwithoutGrails/domain/Make.groovy
+./src/main/groovy/demo/domain/Make.groovy
 ----
-include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/domain/Make.groovy[]
-----
-
-[source,groovy]
-./src/main/groovy/demo/GORMwithoutGrails/domain/Model.groovy
-----
-include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/domain/Model.groovy[]
+include::{sourceDir}/src/main/groovy/demo/domain/Make.groovy[]
 ----
 
 [source,groovy]
-./src/main/groovy/demo/GORMwithoutGrails/domain/Vehicle.groovy
+./src/main/groovy/demo/domain/Model.groovy
 ----
-include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/domain/Vehicle.groovy[]
+include::{sourceDir}/src/main/groovy/demo/domain/Model.groovy[]
+----
+
+[source,groovy]
+./src/main/groovy/demo/domain/Vehicle.groovy
+----
+include::{sourceDir}/src/main/groovy/demo/domain/Vehicle.groovy[]
 ----
 
 There is a bit more to our `Driver.groovy` than meets the eye versus the first 3 classes. That's
@@ -56,15 +56,15 @@ because we are actually extending our `User.groovy class with driver. This will 
 some extra flexibility in the future as we grow our application.
 
 [source,groovy]
-./src/main/groovy/demo/GORMwithoutGrails/domain/Driver.groovy
+./src/main/groovy/demo/domain/Driver.groovy
 ----
-include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/domain/Driver.groovy[]
+include::{sourceDir}/src/main/groovy/demo/domain/Driver.groovy[]
 ----
 
 [source,groovy]
-./src/main/groovy/demo/GORMwithoutGrails/domain/User.groovy
+./src/main/groovy/demo/domain/User.groovy
 ----
-include::{sourceDir}/src/main/groovy/demo/GORMwithoutGrails/domain/User.groovy[]
+include::{sourceDir}/src/main/groovy/demo/domain/User.groovy[]
 ----
 
 Unlike standard GORM we annotate our domain classes with the `@Entity` annotation so that

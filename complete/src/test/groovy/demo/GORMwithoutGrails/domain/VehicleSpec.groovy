@@ -1,5 +1,8 @@
-package demo.GORMwithoutGrails.domain
+package demo.domain
 
+import demo.domain.Make
+import demo.domain.Model
+import demo.domain.Vehicle
 import grails.gorm.transactions.Rollback
 import org.grails.orm.hibernate.HibernateDatastore
 import spock.lang.AutoCleanup
