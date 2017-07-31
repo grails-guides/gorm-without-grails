@@ -3,41 +3,20 @@ Next lets create our service layer for our application.
 [source,bash]
 ----
   $ cd src/main/groovy/demo/service
-  $ touch MakeService
-  $ touch MakeServiceImpl
-  $ touch ModelService
-  $ touch ModelServiceImpl
+  $ touch ManufacturerService
   $ touch VehicleService
-  $ touch VehicleServiceImpl
 ----
 
-Now let’s edit our service classes under src/main/groovy/demo/service.
-We’ll add a `list()` method to all of the classes. This method will have the following additional annotation.
+We are going to use GORM 6.1 Data Services. 
 
-- @Transactional(readOnly = true) - good practice to have on methods that only return data
-
-[source,groovy]
-./src/main/groovy/demo/service/MakeService.groovy
-----
-include::{sourceDir}/src/main/groovy/demo/service/MakeService.groovy[]
-----
+____
+Data Services take the work out of implemented service layer logic by adding the ability to automatically implement abstract classes or interfaces using GORM logic.
+____
 
 [source,groovy]
-./src/main/groovy/demo/service/MakeServiceImpl.groovy
+./src/main/groovy/demo/service/ManufacturerService.groovy
 ----
-include::{sourceDir}/src/main/groovy/demo/service/MakeServiceImpl.groovy[]
-----
-
-[source,groovy]
-./src/main/groovy/demo/service/ModelService.groovy
-----
-include::{sourceDir}/src/main/groovy/demo/service/ModelService.groovy[]
-----
-
-[source,groovy]
-./src/main/groovy/demo/service/ModelServiceImpl.groovy
-----
-include::{sourceDir}/src/main/groovy/demo/service/ModelServiceImpl.groovy[]
+include::{sourceDir}/src/main/groovy/demo/service/ManufacturerService.groovy[]
 ----
 
 [source,groovy]
@@ -46,11 +25,6 @@ include::{sourceDir}/src/main/groovy/demo/service/ModelServiceImpl.groovy[]
 include::{sourceDir}/src/main/groovy/demo/service/VehicleService.groovy[]
 ----
 
-[source,groovy]
-./src/main/groovy/demo/service/VehicleServiceImpl.groovy
-----
-include::{sourceDir}/src/main/groovy/demo/service/VehicleServiceImpl.groovy[]
-----
 
 Additionally all our service classes make use of the `@Service('someName')` annotation.
 This annotation tells Spring what our services are called so it can properly map our

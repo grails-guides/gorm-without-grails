@@ -1,42 +1,12 @@
-Since this is Spring Boot and not Grails we have to do a little bit more setup that we
-are used to. In your top level project directory create a `gradle.properties` file.
-
-[source,bash]
-----
-$ touch gradle.properties
-----
-
-After you have run the above command your new file should have been created on the same level
-as your `build.gradle` file.
-
-image::gradleProperties.png[]
-
-Now lets edit your new properties file and add the following to it.
-
-[source,groovy]
-./gradle.properties
-----
-include::{sourceDir}/gradle.properties[indent=0, lines="1..3"]
-----
-
-This sets us up for our next step of editing our build config and adding some necessary
-dependencies to our project.
-
-NOTE: The necessary dependencies are detailed http://gorm.grails.org/latest/hibernate/manual/index.html#springBoot[here]
- in the GORM documentation.
-
+Edit _build.gradle_ files to include GORM dependencies.
 
 [source,groovy]
 ./build.gradle
 ----
-include::{sourceDir}/build.gradle[indent=0, lines="1..43"]
+include::{sourceDir}/build.gradle[]
 ----
 
-<1> We have removed the ext block in favor of using one of our properties in the
-`gradle.properties` file we just created.
-<2> Apply an IDE specific plugin for IntelliJ since that is what we are using (Not Required).
-<3> Add the required dependencies for GORM to our project.
-<4> Add additional tomcat dependencies. (Without these the database will not work correctly when running).
-<5> Extra testing dependencies so we can use Spock with Spring Boot.
+<1> Add the required dependencies for GORM to our project.
+<2> For connection pooling
 
-
+http://gorm.grails.org/latest/hibernate/manual/index.html#springBoot[Read the GORM documentation to learn more]

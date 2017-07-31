@@ -1,48 +1,23 @@
 Now with our packages in place lets go ahead and create our domain objects.
 
- - Driver.groovy
- - Make.groovy
- - Model.groovy
- - User.groovy
+ - Manufacturer.groovy
  - Vehicle.groovy
-
-NOTE: Our domain is based off of work in previous guides mentioned at the start of the guide.
 
 Feel free to use your favorite IDE to create these or execute the following
 
 [source,bash]
 ----
 $ cd complete/src/main/groovy/demo/domain/
-$ touch Driver.groovy
-$ touch Make.groovy
-$ touch Model.groovy
-$ touch User.groovy
+$ touch Manufacturer.groovy
 $ touch Vehicle.groovy
-----
-
-Next lets do the same thing to setup our testing files.
-
-[source,bash]
-----
-$ cd complete/src/test/groovy/demo/domain/
-$ touch DriverSpec.groovy
-$ touch MakeSpec.groovy
-$ touch ModelSpec.groovy
-$ touch VehicleSpec.groovy
 ----
 
 Now that all our class stubs are in place lets go ahead and edit them.
 
 [source,groovy]
-./src/main/groovy/demo/domain/Make.groovy
+./src/main/groovy/demo/domain/Manufacturer.groovy
 ----
-include::{sourceDir}/src/main/groovy/demo/domain/Make.groovy[]
-----
-
-[source,groovy]
-./src/main/groovy/demo/domain/Model.groovy
-----
-include::{sourceDir}/src/main/groovy/demo/domain/Model.groovy[]
+include::{sourceDir}/src/main/groovy/demo/domain/Manufacturer.groovy[]
 ----
 
 [source,groovy]
@@ -51,30 +26,7 @@ include::{sourceDir}/src/main/groovy/demo/domain/Model.groovy[]
 include::{sourceDir}/src/main/groovy/demo/domain/Vehicle.groovy[]
 ----
 
-There is a bit more to our `Driver.groovy` than meets the eye versus the first 3 classes. That's
-because we are actually extending our `User.groovy class with driver. This will grant us
-some extra flexibility in the future as we grow our application.
+`Manufacturer` and `Vehicle` have a one-to-many relationship. 
 
-[source,groovy]
-./src/main/groovy/demo/domain/Driver.groovy
-----
-include::{sourceDir}/src/main/groovy/demo/domain/Driver.groovy[]
-----
-
-[source,groovy]
-./src/main/groovy/demo/domain/User.groovy
-----
-include::{sourceDir}/src/main/groovy/demo/domain/User.groovy[]
-----
-
-Unlike standard GORM we annotate our domain classes with the `@Entity` annotation so that
-when our application runs Spring Boot will pick up on our domain. Additionally we add the
-`implements GormEntity<>` to our domain. This is not required but helps IDE's pick up the
-domain correctly. Finally we add
-[source,groovy]
-----
-static mapping = {
-    version false
-}
-----
-TIP: Turning off the auto version is so we can bootstrap simple data without complications.
+We are using GORM outside of Grails. Because of that, we need to annotate our domain classes with the `grails.gorm.annotation.Entity`. Additionally we implement the `GormEntity` trait. 
+ It is merely to aid IDE support of GORM outside of Grails. 

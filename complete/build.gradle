@@ -1,4 +1,7 @@
-buildscript { //<1>
+buildscript {
+    ext {
+        springBootVersion = '1.5.6.RELEASE'
+    }
     repositories {
         mavenCentral()
     }
@@ -9,7 +12,6 @@ buildscript { //<1>
 
 apply plugin: 'groovy'
 apply plugin: 'eclipse'
-apply plugin: 'idea' //<2>
 apply plugin: 'org.springframework.boot'
 
 version = '0.0.1-SNAPSHOT'
@@ -23,21 +25,18 @@ repositories {
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.codehaus.groovy:groovy')
+    runtime('com.h2database:h2')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 
-    /** Add GORM */ //<3>
+    // <1>
     compile("org.grails:gorm-hibernate5-spring-boot:6.1.6.RELEASE")
     compile "org.hibernate:hibernate-core:5.1.0.Final"
     compile "org.hibernate:hibernate-ehcache:5.1.0.Final"
 
-    runtime('com.h2database:h2')
-
-    /** Add additional dependencies so our database works properly with GORM at runtime*/ //<4>
+    // <2>
     runtime "org.apache.tomcat:tomcat-jdbc:8.5.0"
     runtime "org.apache.tomcat.embed:tomcat-embed-logging-log4j:8.5.0"
+    runtime "org.slf4j:slf4j-api:1.7.10"
 
-    testCompile('org.springframework.boot:spring-boot-starter-test')
-
-    /** Add additional testing dependencies so we can use Spock */ //<5>
-    testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
-    testCompile 'org.spockframework:spock-spring:1.1-groovy-2.4'
+    runtime "org.glassfish.web:el-impl:2.1.2-b03"
 }

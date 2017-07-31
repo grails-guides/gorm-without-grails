@@ -2,21 +2,14 @@ gettingStarted:
   title: Getting Started
   requirements: What you will need
   howto: How to complete the guide
-runningTheApp:
-  title: Running the Application
 configuringTheApp:
   title: Configuring your Build
+  application: Configuration
 writingTheAppPartOne:
-  title: Writing the Application Part 1
+  title: Writing the Application
   creatingTheDomain: Creating the domain
-  testingTheDomain: Testing our domain
-writingTheAppPartTwo:
-  title: Writing the Application Part 2
-  creatingAppConfig: Additional App Config
-  creatingTestData: Bootstrap Data
-  creatingTheServices: Creating the service layer
+  creatingTestData: Seed Data
+  creatingTheServices: Creating the Service layer
   creatingTheControllers: Creating a controller
-nextSteps:
-  title: Next Steps
 helpWithGrails:
-  title: Do you need help with Grails?
+  title: Do you need help with GORM or Grails?

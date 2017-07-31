@@ -1,2 +1,0 @@
-Now that we have a fully tested GORM implementation in our Spring Boot application
-lets expand that to a full application and see how to finish connecting everything up.

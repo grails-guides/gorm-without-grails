@@ -1,18 +1,7 @@
-Since this is a Spring Boot application and not Grails we start out with a much simpler base
-directory structure.
 
-image::baseLayoutWithPackage.png[]
+We are going to create a package structure similar to the one you find in Grails application. 
 
-Lets start off by adding a few more packages to keep our application organized. Create the following ...
-
- - controller
- - domain
- - service
-
-image::subPackages.png[]
-
-As well as add the following sub package to test ...
-
- - domain
-
-image::testSubPackage.png[]
+ - demo.controller
+ - demo.domain
+ - demo.service
+ - demo.init

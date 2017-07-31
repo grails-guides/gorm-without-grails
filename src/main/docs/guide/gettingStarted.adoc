@@ -1,5 +1,1 @@
 In this guide you are going to build a Spring Boot application using GORM.
-
-NOTE: This guide makes use of the same core "Garage" application concept as used in some of our other guides
-http://guides.grails.org/react-spring-security/guide/index.html[Creating a React app with Spring Security]
-and http://guides.grails.org/vaadin-grails/guide/index.html[Vaadin with Grails].
