@@ -1,2 +1,2 @@
-# GORM-without-Grails
-Using GORM without using Grails
+# gorm-without-grails
+Using gorm without using grails

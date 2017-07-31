@@ -25,7 +25,7 @@ dependencies {
     compile('org.codehaus.groovy:groovy')
 
     /** Add GORM */ //<3>
-    compile("org.grails:gorm-hibernate5-spring-boot:6.1.5.RELEASE")
+    compile("org.grails:gorm-hibernate5-spring-boot:6.1.6.RELEASE")
     compile "org.hibernate:hibernate-core:5.1.0.Final"
     compile "org.hibernate:hibernate-ehcache:5.1.0.Final"
 
