@@ -6,14 +6,11 @@ import groovy.transform.CompileStatic
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.ApplicationRunner
 import org.springframework.boot.SpringApplication
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.context.annotation.ComponentScan
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
 
-@EnableAutoConfiguration
-@ComponentScan
 @CompileStatic
-@SpringBootApplication
+@SpringBootApplication(exclude = HibernateJpaAutoConfiguration.class )
 class Application implements ApplicationRunner {
 
     @Autowired
