@@ -12,7 +12,4 @@ Once that is done add the `Web` and `h2` dependencies to the project.
 image::buildAndMetadata.png[]
 
 
-image::dependency1.png[]
-image::dependency2.png[]
-
 Click `Generate Project`.
