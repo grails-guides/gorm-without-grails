@@ -6,6 +6,8 @@ When the application starts we save some data.
 include::{sourceDir}/src/main/groovy/demo/Application.groovy[]
 ----
 
+<1> Disable Auto-configuration for Hibernate JPA.
+
 [source,groovy]
 ./src/main/groovy/demo/init/BootStrap.groovy
 ----

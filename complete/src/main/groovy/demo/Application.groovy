@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
 
 @CompileStatic
-@SpringBootApplication(exclude = HibernateJpaAutoConfiguration.class )
+@SpringBootApplication(exclude = HibernateJpaAutoConfiguration.class) // <1>
 class Application implements ApplicationRunner {
 
     @Autowired

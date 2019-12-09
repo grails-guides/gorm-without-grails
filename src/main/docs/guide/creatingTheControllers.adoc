@@ -22,12 +22,28 @@ the following annotations
 include::{sourceDir}/src/main/groovy/demo/controller/VehicleController.groovy[]
 ----
 
+Add a test:
+
+[source,groovy]
+./src/test/groovy/demo/controller/VehicleControllerTest.groovy
+----
+include::{sourceDir}/src/test/groovy/demo/controller/VehicleControllerTest.groovy[]
+----
+
 [source,groovy]
 ./src/main/groovy/demo/controller/ManufacturerController.groovy
 ----
 include::{sourceDir}/src/main/groovy/demo/controller/ManufacturerController.groovy[]
 ----
---
+
+Add a test:
+
+[source,groovy]
+./src/test/groovy/demo/controller/ManufacturerControllerTest.groovy
+----
+include::{sourceDir}/src/test/groovy/demo/controller/ManufacturerControllerTest.groovy[]
+----
+
 
 Run the app: 
 
