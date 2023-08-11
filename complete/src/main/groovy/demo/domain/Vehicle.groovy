@@ -8,7 +8,7 @@ import groovy.transform.ToString
 @Entity
 class Vehicle implements GormEntity<Vehicle> {
     String name
-    Integer year
+    Integer yearOfManufacture
     static belongsTo = [manufacturer: Manufacturer]
 
     static constraints = {
