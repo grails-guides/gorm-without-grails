@@ -18,12 +18,12 @@ class BootStrap {
     @Transactional
     void init() {
         Manufacturer audi = new Manufacturer(name: 'audi')
-        audi.addToVehicles(new Vehicle(name: 'A3', year: 1996))
-        audi.addToVehicles(new Vehicle(name: 'A4', year: 1994))
+        audi.addToVehicles(new Vehicle(name: 'A3', yearOfManufacture: 1996))
+        audi.addToVehicles(new Vehicle(name: 'A4', yearOfManufacture: 1994))
         manufacturerService.save(audi)
 
         Manufacturer ford = new Manufacturer(name: 'ford')
-        ford.addToVehicles(new Vehicle(name: 'Ford KA', year: 1996))
+        ford.addToVehicles(new Vehicle(name: 'Ford KA', yearOfManufacture: 1996))
         manufacturerService.save(ford)
     }
 }

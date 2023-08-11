@@ -1,14 +1,14 @@
 package demo.service
 
-import demo.domain.Manufacturer
 import demo.domain.Vehicle
 import grails.gorm.services.Where
 import groovy.transform.CompileStatic
-import org.springframework.stereotype.Service
+import org.springframework.stereotype.Service as SpringService
+import grails.gorm.services.Service as GormService
 
 @CompileStatic
-@grails.gorm.services.Service(Vehicle)
-@Service
+@GormService(Vehicle)
+@SpringService
 interface VehicleService {
 
     @Where({ manufacturer.name == manufacturerName })
